@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Layout({ children, title }) {
+export default function Layout({ children, title, index }) {
   return (
     <>
       <Head>
@@ -20,7 +20,7 @@ export default function Layout({ children, title }) {
         </Link>
       </div>
       <div className={`${styles.main} ${inter.className}`}>
-        <h1 className={styles.heading} tabIndex={0}>{title}</h1>
+        <h1 className={(index ? styles.heading : styles.subheading)} tabIndex={0}>{title}</h1>
         {children}
       </div>
       <div className={styles.footer}></div>
