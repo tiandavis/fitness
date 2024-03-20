@@ -7,10 +7,16 @@ export default function Excercises() {
   const [exercises, setExercises] = useState([]);
 
   useEffect(() => {
-    fetch("/fitbod-web-internal/exercises.json")
-      .then(response => response.json())
-      .then(data => setExercises(data))
-      .catch(error => console.error("Error fetching exercises", error));
+    (async () => {
+      try {
+        const response = await fetch("/fitbod-web-internal/exercises.json");
+        const data = await response.json();
+        setExercises(data);
+        localStorage.setItem("exercises", JSON.stringify(data));
+      } catch (error) {
+        console.error("Error fetching exercises from host.", error);
+      }
+    })();
   }, []);
 
   return (
