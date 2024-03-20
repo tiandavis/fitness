@@ -23,6 +23,11 @@
   height: 150px;
   background-color: #0085BF;
 
-  position: relative;
+  position: absolute;
   bottom: 0;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+  }
 }

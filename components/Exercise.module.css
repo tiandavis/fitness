@@ -1,3 +1,23 @@
 .exercise {
+  display: flex;
+  align-items: center;
+  min-width: 329px;
+  max-width: 329px;
 
+  .image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .meta {
+    margin: 0 24px;
+
+    .name {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .arrow {
+    margin-left: auto;
+  }
 }
