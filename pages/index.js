@@ -15,10 +15,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.header}>
-        <img className={styles.logo} src="https://storage.googleapis.com/fitbod-web-internal/logo.svg" alt="Fitbod Logo" />
+        <a href="/">
+          <img className={styles.logo} src="https://storage.googleapis.com/fitbod-web-internal/logo.svg" alt="Fitbod Logo" />
+        </a>
       </div>
       <div className={styles.main}>
-        <h1 className={styles.heading}>Top Exercises</h1>
+        <h1 className={styles.heading} tabIndex={0}>Top Exercises</h1>
         <Excercises/>
       </div>
       <div className={styles.footer}></div>

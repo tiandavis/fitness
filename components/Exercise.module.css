@@ -3,6 +3,7 @@
   align-items: center;
   min-width: 329px;
   max-width: 329px;
+  cursor: pointer;
 
   .image {
     width: 60px;

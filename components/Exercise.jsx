@@ -1,8 +1,8 @@
 import styles from "./Exercise.module.css";
 
-export default function Excercises(props) {
+export default function Excercise(props) {
   return (
-    <div id={props.exercise.id} className={styles.exercise}>
+    <div id={props.exercise.id} className={styles.exercise} tabIndex={0} aria-label={`${props.exercise.name}, ${props.exercise.muscle}`}>
       <img className={styles.image} src={props.exercise.image} alt={props.exercise.name}/>
       <div className={styles.meta}>
         <h2 className={styles.name}>{props.exercise.name}</h2>
