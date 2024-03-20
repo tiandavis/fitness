@@ -15,4 +15,9 @@ body {
   background: linear-gradient(180deg, #C4F7E8 0%, #A5CCF9 125%);
   background-repeat: no-repeat;
   height: 100%;
+
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
 }

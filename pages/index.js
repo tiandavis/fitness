@@ -20,7 +20,7 @@ export default function Home() {
       </div>
       <div className={styles.main}>
         <h1 className={styles.heading}>Top Exercises</h1>
-        <Excercises />
+        <Excercises/>
       </div>
       <div className={styles.footer}></div>
     </>
