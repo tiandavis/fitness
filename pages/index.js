@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 
 export default function Index() {
   return (
-    <Layout title="Top Exercises" index={true}>
+    <Layout title={"Top Exercises"} home={true}>
       <Excercises />
     </Layout>
   );

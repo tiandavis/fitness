@@ -28,18 +28,14 @@ export default function ExercisePage() {
     }
 
     try {
-      const performances = JSON.parse(localStorage.getItem("performances"));
+      const slugs = JSON.parse(localStorage.getItem("slugs")) || [];
 
-      if (performances) {
-        // Sort performances by date in descending order
-        performances.sort((a, b) => new Date(b.date) - new Date(a.date));
+      if (slugs) {
+        const instance = slugs.find((s) => s.slug === slug);
 
-        // Sort sets within each performance by timestamp in ascending order
-        performances.forEach((performance) => {
-          performance.sets.sort((a, b) => a.timestamp - b.timestamp);
-        });
-
-        setPerformances(performances);
+        if (instance) {
+          setPerformances(instance.performances);
+        }
       }
     } catch(error) {
       console.error("Error fetching performances from localStorage.", error);
@@ -63,8 +59,6 @@ export default function ExercisePage() {
       timestamp: new Date(new Date().toLocaleString()).getTime(),
     };
 
-    const performances = JSON.parse(localStorage.getItem("performances")) || [];
-
     const today = performances.find(performance => performance.date === newSet.date);
 
     if (today) {
@@ -76,9 +70,31 @@ export default function ExercisePage() {
       });
     }
 
-    localStorage.setItem("performances", JSON.stringify(performances));
-    setPerformances(performances);
+    // Sort performances by date in descending order
+    performances.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Sort sets within each performance by timestamp in ascending order
+    performances.forEach((performance) => {
+      performance.sets.sort((a, b) => a.timestamp - b.timestamp);
+    });
+
+    setPerformances([...performances]);
+
+    storePerformances(performances);
   };
+
+  const storePerformances = (performances) => {
+    let slugs = JSON.parse(localStorage.getItem("slugs")) || [];
+    let instance = slugs.find(s => s.slug === slug);
+
+    if (instance) {
+      instance.performances = performances;
+    } else {
+      slugs.push({ slug, performances });
+    }
+
+    localStorage.setItem("slugs", JSON.stringify(slugs));
+  }
 
   const calculateEstimatedOneRepMax = (weight, reps) => {
     return Math.round(weight * (36 / (37 - reps)));
