@@ -45,6 +45,7 @@
       border-radius: 8px;
       border: 1px solid #000;
       margin-left: 16px;
+      cursor: pointer;
     }
 
     .performances {
