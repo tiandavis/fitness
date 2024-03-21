@@ -52,6 +52,8 @@
       min-width: 525px;
 
       .performance {
+        margin-bottom: 32px;
+
         .day {
           font-size: 14px;
           font-weight: 700;
