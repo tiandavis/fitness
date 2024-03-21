@@ -26,6 +26,24 @@ export default function ExercisePage() {
     } catch(error) {
       console.error("Error fetching exercise from localStorage.", error);
     }
+
+    try {
+      const performances = JSON.parse(localStorage.getItem("performances"));
+
+      if (performances) {
+        // Sort performances by date in descending order
+        performances.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        // Sort sets within each performance by timestamp in ascending order
+        performances.forEach((performance) => {
+          performance.sets.sort((a, b) => a.timestamp - b.timestamp);
+        });
+
+        setPerformances(performances);
+      }
+    } catch(error) {
+      console.error("Error fetching performances from localStorage.", error);
+    }
   }, [slug]);
 
   const handleRepsChange = (event) => {
