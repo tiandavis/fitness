@@ -16,7 +16,7 @@ export default function Layout({ children, title, index }) {
       </Head>
       <div className={styles.header}>
         <Link href="/">
-          <img className={styles.logo} src="https://storage.googleapis.com/fitbod-web-internal/logo.svg" alt="Fitbod Logo" />
+          <img className={styles.logo} src="https://storage.googleapis.com/fitbod-web-internal/logo.svg" alt="Fitbod Logo" data-testid="logo" />
         </Link>
       </div>
       <div className={`${styles.main} ${inter.className}`}>

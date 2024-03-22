@@ -131,15 +131,15 @@ export default function ExercisePage() {
           </form>
 
           <h2 className={styles["performance-header"]} tabIndex={0} aria-label={"Performances"}>Performances:</h2>
-          <div className={styles.performances}>
+          <div className={styles.performances} data-testid="performances">
             {performances.map((performance, index) => (
-              <div key={index} className={styles.performance} tabIndex={0} aria-label={"Performance"}>
-                <h3 className={styles.day} tabIndex={0} aria-label={`Performance Date ${performance.date}`}>{performance.date}</h3>
+              <div key={index} className={styles.performance} tabIndex={0} aria-label={"Performance"} data-testid="performance">
+                <h3 className={styles.day} tabIndex={0} aria-label={`Performance Date ${performance.date}`} data-testid="day">{performance.date}</h3>
                 <div className={styles.sets}>
                   {performance.sets.map((set, setIndex) => (
-                    <div key={setIndex} className={styles.set} tabIndex={0} aria-label={"Set"}>
-                      <div className={styles["reps-by-weight"]} tabIndex={0} aria-label={`${set.reps} reps by ${set.weight} pounds`}>{set.reps} x {set.weight} lb</div>
-                      <div className={styles["estimated-one-rep-max"]} tabIndex={0} aria-label={`Estimated one rep max is ${set.estimatedOneRepMax} pounds`}><strong>Estimated 1RM:</strong> {set.estimatedOneRepMax} lb</div>
+                    <div key={setIndex} className={styles.set} tabIndex={0} aria-label={"Set"} data-testid="set">
+                      <div className={styles["reps-by-weight"]} tabIndex={0} aria-label={`${set.reps} reps by ${set.weight} pounds`} data-testid="reps-by-weight">{set.reps} x {set.weight} lb</div>
+                      <div className={styles["estimated-one-rep-max"]} tabIndex={0} aria-label={`Estimated one rep max is ${set.estimatedOneRepMax} pounds`} data-testid="estimated-one-rep-max"><strong>Estimated 1RM:</strong> {set.estimatedOneRepMax} lb</div>
                     </div>
                   ))}
                 </div>
