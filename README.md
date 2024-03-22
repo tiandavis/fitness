@@ -20,9 +20,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Accessibility
 
-The application is accessible and can be navigated using the keyboard. The application is also responsive and can be used on mobile devices.
+The application is accessible and can be navigated using the keyboard.
 
-Enable VoiceOver on your device to test the application's voice navigation capabilities.
+How to Navigate by Keyboard:
+- Use the tab key to navigate forward through the application and the enter key to select an item.
+- Use shft + tab to navigate backwards.
+
+Enable VoiceOver on your device to test the application's speech capabilities.
+
+The application is also responsive and can be used on mobile devices.
 
 
 ## Test the application
