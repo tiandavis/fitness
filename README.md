@@ -27,9 +27,16 @@ Enable VoiceOver on your device to test the application's voice navigation capab
 
 ## Test the application
 
-Use the following command to run the headless application cypress tests:
+Use the following commands to run the headless application cypress tests.
+
+In terminal start the application with the following command:
 
 ```bash
 npm run dev
+```
+
+Then, in a separate terminal window start the application tests runner with the following command:
+
+```bash
 npm run test
 ```
