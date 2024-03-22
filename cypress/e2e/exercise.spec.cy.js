@@ -21,6 +21,12 @@ describe("Exercise Page", () => {
     cy.get("h1").should("contain", "Landmine Press")
   })
 
+  it("has the correct image", () => {
+    visitExercise()
+    cy.get("[data-testid='exercise-image']").should("be.visible")
+    cy.get("[data-testid='exercise-image']").should("have.attr", "alt", "Landmine Press")
+  })
+
   it("can add a set", () => {
     visitExercise()
 

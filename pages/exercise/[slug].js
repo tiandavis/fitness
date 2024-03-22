@@ -116,7 +116,7 @@ export default function ExercisePage() {
   return (
     <Layout title={exercise.name}>
       <div className={styles.article}>
-        <img className={styles.image} src={exercise.image} alt={exercise.name} tabIndex={0} />
+        <img className={styles.image} src={exercise.image} alt={exercise.name} tabIndex={0} data-testid="exercise-image" />
 
         <div className={styles.details}>
           <form onSubmit={handleSubmit}>
